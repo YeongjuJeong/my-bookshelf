@@ -103,9 +103,13 @@ npm install
 
 ### 4.2 환경 변수 설정
 
-보안상 Firebase 설정값은 직접 코드에 포함하지 않고 `.env` 파일로 관리합니다.
+본 프로젝트는 Firebase Authentication, Firestore, Google Login 기능을 사용합니다.
+Firebase 설정값은 보안 및 제출 안내에 따라 소스코드에 직접 작성하지 않고, 환경 변수 파일을 통해 관리합니다.
 
-프로젝트 최상위 폴더에 `.env` 파일을 생성한 뒤, `.env.example` 파일을 참고하여 Firebase 설정값을 입력합니다.
+프로젝트에는 환경 변수 예시 파일인 `.env.example`이 포함되어 있습니다.
+프로젝트를 실행하려면 `.env.example` 파일을 참고하여 최상위 폴더에 `.env` 파일을 새로 생성한 뒤, 본인의 Firebase 설정값을 입력해야 합니다.
+
+`.env.example` 파일 예시는 다음과 같습니다.
 
 ```env
 VITE_FIREBASE_API_KEY=your_api_key
@@ -117,7 +121,18 @@ VITE_FIREBASE_APP_ID=your_app_id
 VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
 ```
 
-주의: `.env` 파일에는 실제 Firebase Key가 포함되므로 GitHub 또는 제출용 압축 파일에 포함하지 않습니다.
+실제 Firebase 설정값은 Firebase Console에서 확인할 수 있습니다.
+
+보안상 `.env` 파일에는 실제 Firebase 설정값이 포함되므로 GitHub 저장소 및 제출용 압축 파일에는 포함하지 않습니다.
+대신 `.env.example` 파일에는 실제 값이 아닌 예시값만 작성하여, 프로젝트 실행에 필요한 환경 변수 이름을 안내합니다.
+
+`.gitignore`에는 다음 항목을 추가하여 실제 환경 변수 파일이 저장소에 올라가지 않도록 설정하였습니다.
+
+```gitignore
+.env
+.env.local
+.env.*.local
+```
 
 ### 4.3 개발 서버 실행
 
