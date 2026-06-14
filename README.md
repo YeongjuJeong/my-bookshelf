@@ -282,7 +282,7 @@ users
 Firebase Hosting을 사용하여 웹페이지를 배포하였습니다.
 
 ```text
-호스팅 주소: 여기에 Firebase Hosting 주소 입력
+호스팅 주소: https://my-bookshelf-1d23c.web.app/
 ```
 
 ---
@@ -290,7 +290,7 @@ Firebase Hosting을 사용하여 웹페이지를 배포하였습니다.
 ## 11. GitHub 저장소
 
 ```text
-GitHub 저장소 주소: 여기에 GitHub 주소 입력
+GitHub 저장소 주소: https://github.com/YeongjuJeong/my-bookshelf
 ```
 
 ---
