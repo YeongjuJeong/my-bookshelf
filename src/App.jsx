@@ -234,6 +234,14 @@ function App() {
     }
   };
 
+  const getBookWidth = (pages) => {
+    if (!thicknessMode) return 38;
+
+    const pageNumber = Number(pages) || 0;
+
+    return Math.min(80, Math.max(28, 24 + pageNumber * 0.08));
+  };
+
   const handleEmailLogin = async (email, password) => {
     await signInWithEmailAndPassword(auth, email, password);
     setActivePage("shelf");
@@ -1604,24 +1612,23 @@ function BookShelf({ title, books, thicknessMode, onSelectBook }) {
 }
 
 function BookSpine({ book, thicknessMode, onClick }) {
-  const width = thicknessMode ? Math.min(90, Math.max(38, book.pages / 8)) : 55;
+  const width = thicknessMode
+    ? Math.min(80, Math.max(28, 24 + Number(book.pages || 0) * 0.08))
+    : 38;
 
   return (
     <button
       onClick={onClick}
-      className="flex h-56 cursor-pointer items-center justify-center rounded-t-md border border-black/10 shadow-md transition hover:-translate-y-2 hover:shadow-lg"
-      style={{
-        width: `${width}px`,
-        backgroundColor: book.color,
-      }}
-      title={`${book.title} / ${book.author}`}
+      className="flex h-40 items-center justify-center rounded-t-md shadow-md transition-all duration-300"
+        style={{
+          width: `${width}px`,
+          minWidth: `${width}px`,
+          backgroundColor: book.color,
+        }}
     >
-      <p
-        className="text-sm font-bold text-white"
-        style={{ writingMode: "vertical-rl" }}
-      >
+      <span className="text-xs text-white" style={{ writingMode: "vertical-rl" }}>
         {book.title}
-      </p>
+      </span>
     </button>
   );
 }
