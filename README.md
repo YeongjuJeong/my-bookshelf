@@ -319,7 +319,7 @@ GitHub 저장소 주소: https://github.com/YeongjuJeong/my-bookshelf
 
 ## 13. AI 활용 내역
 
-본 프로젝트 개발 과정에서 ChatGPT를 활용하였습니다.
+본 프로젝트 개발 과정에서 ChatGPT와 GitHub Copilot을 활용하였습니다.
 
 AI 활용 내용은 다음과 같습니다.
 
@@ -333,6 +333,7 @@ AI 활용 내용은 다음과 같습니다.
 * Firebase Authentication 및 Google 로그인 구현 보조
 * 오류 메시지 분석 및 디버깅
 * README 및 보고서 작성 방향 정리
+* GitHub Copilot을 활용한 코드 자동완성 및 반복 코드 작성 보조
 
 AI가 제안한 코드는 직접 실행하고 테스트하면서 수정하였으며, 최종적으로 프로젝트 기능이 정상적으로 작동하는지 확인하였습니다.
 
